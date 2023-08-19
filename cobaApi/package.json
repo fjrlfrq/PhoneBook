@@ -1,0 +1,27 @@
+{
+  "name": "cobaapi",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "react-bootstrap-modal": "^4.2.0",
+    "react-redux": "^8.1.2",
+    "redux": "^4.2.1",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "sequelize-cli": "^6.6.0"
+  }
+}
