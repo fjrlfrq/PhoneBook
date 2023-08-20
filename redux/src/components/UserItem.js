@@ -50,7 +50,7 @@ export default function UserItem(props) {
             ...user,
             name: user.name,
             phone: user.phone,
-            isEdit: false
+            isEdit: true
         });
     }, [dispatch, user])
 
@@ -58,7 +58,7 @@ export default function UserItem(props) {
         setUser({
             showHide: true
         })
-    }, [dispatch])
+    }, [])
 
     const cancelHandleModalShowHide = useCallback((event) => {
         event.preventDefault()
@@ -148,7 +148,7 @@ export default function UserItem(props) {
                             className="btn btn-warning"
                             onClick={props.resend}
                             style={{ backgroundColor: '#ffdf2b', borderWidth: 0, color: 'white' }}>
-                            <i class="bi bi-send"></i>
+                            <i className="bi bi-send"></i>
                             resend
                         </button>
                     </td>

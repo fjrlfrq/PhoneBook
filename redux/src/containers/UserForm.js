@@ -93,7 +93,7 @@ export default function UserForm(props) {
                             onClick={props.cancel}
                             className="btn btn-warning"
                             style={{ backgroundColor: 'a-so#f2af05', borderWidth: 0, color: 'white' }}>
-                            <i class="bi bi-arrow-left"></i>
+                            <i className="bi bi-arrow-left"></i>
                             &nbsp;
                             Back</button>
                     }
