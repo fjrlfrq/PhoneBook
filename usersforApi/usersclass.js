@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models');
-var { Response } = require('../helpers/utils')
+var { Response } = require('../helpers/util')
 const { Op } = require('sequelize');
 
 /* GET users listing. */
@@ -10,7 +10,7 @@ router.get('/', async function (req, res, next) {
     const { name, phone } = req.query
 
     const page = parseInt(req.query.page) || 1
-    const limit = 5
+    const limit = 3
     const offset = (page - 1) * limit
 
     const total = await models.User.count()
@@ -46,10 +46,7 @@ router.get('/', async function (req, res, next) {
       res.json(new Response({ users, page, pages: pages, offset }))
     }
     else {
-      const users = await models.User.findAll({
-        order: [['id', 'DESC']]
-        , limit: limit, offset: offset
-      })
+      const users = await models.User.findAll({ order:[['id', 'ASC']],limit: limit, offset: offset })
       res.json(new Response({ users, page, pages: pages, offset }))
     }
   } catch (err) {

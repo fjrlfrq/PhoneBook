@@ -50,7 +50,7 @@ export default function UserItem(props) {
             ...user,
             name: user.name,
             phone: user.phone,
-            isEdit: true
+            isEdit: false
         });
     }, [dispatch, user])
 
