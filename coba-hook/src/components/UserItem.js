@@ -28,7 +28,7 @@ export default function UserItem(props) {
     const handleEdit = useCallback((event) => {
         event.preventDefault()
         setUser({
-            name: user.name, 
+            name: user.name,
             phone: user.phone,
             isEdit: true
         });
@@ -48,7 +48,7 @@ export default function UserItem(props) {
         props.update(user.name, user.phone)
         setUser({
             ...user,
-            name: user.name, 
+            name: user.name,
             phone: user.phone,
             isEdit: false
         });
@@ -104,7 +104,7 @@ export default function UserItem(props) {
                             <button type="button"
                                 className="btn btn-primary"
                                 onClick={saveEdit}>
-                                <i className="fa-solid fa-floppy-disk"></i>
+                                <i className="bi bi-download"></i>
                                 &nbsp;
                                 save
                             </button>
@@ -113,7 +113,7 @@ export default function UserItem(props) {
                                 className="btn btn-warning"
                                 onClick={handleCancel}
                                 style={{ color: "white" }}>
-                                <i className="fa-solid fa-ban"></i>
+                                <i className="bi bi-x-lg"></i>
                                 &nbsp;
                                 cancel
                             </button>
@@ -123,7 +123,7 @@ export default function UserItem(props) {
                             <button type="button"
                                 className="btn btn-success"
                                 onClick={handleEdit}>
-                                <FontAwesomeIcon icon={faPen} />
+                                <i className="bi bi-pencil"></i>
                                 &nbsp;
                                 edit
                             </button>
@@ -131,7 +131,7 @@ export default function UserItem(props) {
                             <button type="button"
                                 className="btn btn-danger"
                                 onClick={() => handleModalShowHide()}>
-                                <FontAwesomeIcon icon={faTrashCan} />
+                                <i className="bi bi-trash"></i>
                                 &nbsp;
                                 delete
                             </button>
@@ -142,6 +142,7 @@ export default function UserItem(props) {
                             className="btn btn-warning"
                             onClick={props.resend}
                             style={{ color: "white" }}>
+                            <i className="bi bi-send"></i>
                             resend
                         </button>
                     </td>

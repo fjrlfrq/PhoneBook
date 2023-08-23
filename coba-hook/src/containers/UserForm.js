@@ -81,10 +81,10 @@ export default function UserForm(props) {
                 <div className="col-auto">
                     <button type="submit" className="btn btn-success" >
                         {props.submitLabel !== "search" &&
-                            <i className="fa-regular fa-circle-check"></i>
+                            <i className="bi bi-download"></i>
                         }
                         {props.submitLabel === "search" &&
-                            <i className="fa-solid fa-magnifying-glass"></i>
+                            <i className="bi bi-search"></i>
                         }
                         &nbsp;
                         {props.submitLabel || "save"} </button>
@@ -94,7 +94,7 @@ export default function UserForm(props) {
                             onClick={props.cancel}
                             className="btn btn-warning"
                             style={{ color: "white" }}>
-                            <i className="fa-solid fa-ban"></i>
+                            <i className="bi bi-arrow-left"></i>
                             &nbsp;
                             cancel</button>
                     }
@@ -103,7 +103,7 @@ export default function UserForm(props) {
                             onClick={cancelSearch}
                             className="btn btn-warning"
                             style={{ color: "white" }}>
-                            <i className="fa-solid fa-ban"></i>
+                            <i className="bi bi-arrow-clockwise"></i>
                             &nbsp;
                             reset</button>
                     }

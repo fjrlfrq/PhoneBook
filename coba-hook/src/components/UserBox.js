@@ -52,7 +52,7 @@ export default function UserBox(props) {
                     <button type="submit"
                         className="btn btn-primary"
                         onClick={handleAdd}>
-                        <i className="fa-solid fa-plus"></i>
+                        <i className="bi bi-plus-lg"></i>
                         &nbsp;
                         add
                     </button>
