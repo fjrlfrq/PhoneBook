@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react"
-import UserForm from "../containers/UserForm"
-import UserList from "../containers/UserList"
+import UserForm from "./UserForm"
+import UserList from "./UserList"
 import { useDispatch } from 'react-redux'
 
 export default function User(props) {

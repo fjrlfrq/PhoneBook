@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 
-import UserItem from "../components/UserItem";
- 
+import UserItem from "../../components/UserItem";
+
 import {
     readUserAsync,
     selectUser,
@@ -10,7 +10,7 @@ import {
     createUserAsync,
     updateUserAsync,
     loadUserAsync
-  } from '../reducers/users';
+  } from './UserSlice';
 
 
 export default function UserList(props) {

@@ -6,7 +6,7 @@ import {
     create,
     resetSearch,
     searchUserAsync,
-} from '../reducers/users'
+} from './UserSlice'
 
 export default function UserForm(props) {
 

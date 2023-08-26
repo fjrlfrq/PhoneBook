@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './actions/store';
-import User from './components/UserBox';
+import { store } from './app/store';
+import User from './features/user/UserBox';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
