@@ -10,7 +10,7 @@ router.get('/', async function (req, res, next) {
     const { name, phone } = req.query
 
     const page = parseInt(req.query.page) || 1
-    const limit = 10
+    const limit = 100
     const offset = (page - 1) * limit
 
     const total = await models.User.count()
