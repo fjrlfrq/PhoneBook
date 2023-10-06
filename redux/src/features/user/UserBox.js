@@ -28,9 +28,9 @@ export default function User(props) {
     return (
         <div className="container mt-5">
             <div className="card">
-                <div className=" shadow mb-4">
-                    <div className="card-header pt-4 pb-3">
-                        <h2>PHONEBOOK</h2>
+                <div className="shadow mb-4">
+                    <div className="card-header pt-4 pb-3" style={{backgroundColor: '#2E8E57',}}>
+                        <h2 style={{color: '#ffffff',}}>PHONEBOOK</h2>
                     </div>
                 </div>
 
