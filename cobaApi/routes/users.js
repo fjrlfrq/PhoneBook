@@ -10,14 +10,14 @@ router.get('/', async function (req, res, next) {
     const { name, phone } = req.query
 
     const page = parseInt(req.query.page) || 1
-    const limit = 10
+    const limit = 5
     const offset = (page - 1) * limit
 
     const total = await models.User.count()
     const pages = Math.ceil(total / limit)
 
     if (name && phone) {
-      const { count, rows } = await models.User.findAndCountAll({
+      const users = await models.User.findAll({
         where:
         {
           [Op.and]:
@@ -27,30 +27,30 @@ router.get('/', async function (req, res, next) {
             ]
         }, limit: limit, offset: offset
       })
-      res.json(new Response({ users : rows, totalCount: count, page, pages: pages, offset }))
+      res.json(new Response({ users, page, pages: pages, offset }))
     }
     else if (name) {
-      const  { count, rows } = await models.User.findAndCountAll({
+      const users = await models.User.findAll({
         where:
           { name: { [Op.like]: '%' + name + '%' } }
         , limit: limit, offset: offset
       })
-      res.json(new Response({ users : rows, totalCount: count, page, pages: pages, offset }))
+      res.json(new Response({ users, page, pages: pages, offset }))
     }
     else if (phone) {
-      const  { count, rows } = await models.User.findAndCountAll({
+      const users = await models.User.findAll({
         where:
           { phone: { [Op.like]: '%' + phone + '%' } }
         , limit: limit, offset: offset
       })
-      res.json(new Response({ users : rows, totalCount: count, page, pages: pages, offset }))
+      res.json(new Response({ users, page, pages: pages, offset }))
     }
     else {
-      const  { count, rows } = await models.User.findAndCountAll({
+      const users = await models.User.findAll({
         order: [['id', 'DESC']]
         , limit: limit, offset: offset
       })
-      res.json(new Response({ users : rows, totalCount: count, page, pages: pages, offset }))
+      res.json(new Response({ users, page, pages: pages, offset }))
     }
   } catch (err) {
     res.status(500).json(new Response(err, false))
